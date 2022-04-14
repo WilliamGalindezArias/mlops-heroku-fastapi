@@ -14,6 +14,7 @@ model_path = "../models/classifier.pkl"
 metrics_path = "../models/metrics_slice.csv"
 
 
+
 def save_model(model_path, encoder, lb, clf):
     with open(model_path, "wb") as f:
         pkl.dump([encoder, lb, clf], f)
@@ -59,6 +60,9 @@ testing_predictions = model.inference(clf, X_test)
 # 6. Metrics
 
 precision, recall, f_beta = model.compute_model_metrics(y_test, testing_predictions)
+print(f"Precision: {precision}", "\n")
+print(f"Recall :{recall}", "\n")
+print(f"f_beta :{f_beta}", "\n")
 
 # 7. Metrics by slice
 
