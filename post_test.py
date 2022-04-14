@@ -7,7 +7,7 @@ April 2022
 
 import requests
 
-URL = "https://devops-ml.herokuapp.com/"
+URL = "https://devops-ml.herokuapp.com/predictions"
 data = {
         "age": 39,
         "fnlgt": 77516,
@@ -26,8 +26,8 @@ data = {
     
 
 post_request = requests.post(URL, json=data)
+print(f"Response code: {post_request.status_code}")
+print(f"Response body: {post_request.json()}")
 
 assert post_request.status_code == 200
 
-print(f"Response code: {post_request.status_code}")
-print(f"Response body: {post_request.json()}")
