@@ -9,17 +9,21 @@ import requests
 
 URL = "https://devops-ml.herokuapp.com/"
 data = {
-        "age": 28,
-        "workclass": "Private",
+        "age": 39,
+        "fnlgt": 77516,
+        "workclass": "State-gov",
         "education": "Bachelors",
-        "maritalStatus": "Married-civ-spouse",
+        "education_num": 13,
+        "marital_status": "Never-married",
         "occupation": "Adm-clerical",
-        "relationship": "Wife",
+        "relationship": "Not-in-family",
         "race": "White",
-        "sex": "Female",
-        "hoursPerWeek": 40,
-        "nativeCountry": "United-States"
-    }
+        "sex": "Male",
+        "capital_gain": 2174,
+        "capital_loss": 0,
+        "hours_per_week": 40,
+        "native_country": "United-States"}
+    
 
 post_request = requests.post(URL, json=data)
 
