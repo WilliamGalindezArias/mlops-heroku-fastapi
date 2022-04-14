@@ -2,3 +2,4 @@ dvc
 dvc[s3]
 flake8
 requests
+scikit-learn
