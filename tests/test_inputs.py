@@ -29,20 +29,24 @@ def test_bad_post(client):
         "hoursPerWeek": 60,
         "nativeCountry": "United-States"
     })
-    assert request.status_code == 405
+    assert request.status_code == 422
     
     
 def test_ok_post(client):
     request = client.post("/predictions", json={
-        "age": 28,
-        "workclass": "Private",
+        "age": 39,
+        "fnlgt": 77516,
+        "workclass": "State-gov",
         "education": "Bachelors",
-        "maritalStatus": "Divorced",
-        "occupation": "Prof-specialty",
-        "relationship": "Husband",
+        "education_num": 13,
+        "marital_status": "Never-married",
+        "occupation": "Adm-clerical",
+        "relationship": "Not-in-family",
         "race": "White",
         "sex": "Male",
-        "hoursPerWeek": 60,
-        "nativeCountry": "United-States"
+        "capital_gain": 2174,
+        "capital_loss": 0,
+        "hours_per_week": 40,
+        "native_country": "United-States"
     })
     assert request.status_code == 200
