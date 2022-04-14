@@ -14,7 +14,7 @@ data = {
         "education": "Bachelors",
         "maritalStatus": "Married-civ-spouse",
         "occupation": "Prof-specialty",
-        "relationship": "Husband",
+        "relationship": "Wife",
         "race": "Black",
         "sex": "Female",
         "hoursPerWeek": 40,
@@ -23,7 +23,7 @@ data = {
 
 post_request = requests.post(URL, json=data)
 
-assert r.status_code == 200
+assert post_request.status_code == 200
 
 print(f"Response code: {post_request.status_code}")
 print(f"Response body: {post_request.json()}")
