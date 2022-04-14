@@ -9,14 +9,14 @@ import requests
 
 URL = "https://devops-ml.herokuapp.com/"
 data = {
-        "age": 30,
-        "workclass": "Private",
+        "age": 39,
+        "workclass": "State-gov",
         "education": "Bachelors",
         "maritalStatus": "Married-civ-spouse",
-        "occupation": "Prof-specialty",
-        "relationship": "Wife",
-        "race": "Black",
-        "sex": "Female",
+        "occupation": "Adm-clerical",
+        "relationship": "Not-in-family",
+        "race": "White",
+        "sex": "Male",
         "hoursPerWeek": 40,
         "nativeCountry": "United-States"
     }
