@@ -32,7 +32,7 @@ def test_bad_post(client):
     assert request.status_code == 422
     
     
- def test_ok_post(client):
+def test_ok_post(client):
     request = client.post("/", json={
         "age": 28,
         "workclass": "Private",
