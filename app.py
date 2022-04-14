@@ -27,6 +27,7 @@ logger = logging.getLogger()
 # DVC on Heroku
 if "DYNO" in os.environ and os.path.isdir(".dvc"):
     os.system("dvc config core.no_scm true")
+    os.system("dvc remote add -df s3-bucket s3://mlops-app/census/")
     if os.system("dvc pull") != 0:
         exit("dvc pull failed")
     os.system("rm -r .dvc .apt/usr/lib/dvc")
