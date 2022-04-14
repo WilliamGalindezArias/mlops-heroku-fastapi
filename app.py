@@ -4,7 +4,6 @@ Date: April 2022
 FastAPI application to run queries and get predictions
 """
 
-
 from pydantic import BaseModel
 from fastapi import FastAPI
 from src.ml.data import process_data
@@ -56,7 +55,7 @@ app = FastAPI(title="Census data")
 @app.on_event("startup")
 def startup_event():
     """
-    Load model on startup
+    Load model on startup to speed up execution
     """
 
     with open("models/classifier.pkl", "rb") as model_file:
