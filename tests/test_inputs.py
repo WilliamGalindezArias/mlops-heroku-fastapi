@@ -17,7 +17,7 @@ def test_get(client):
 
 
 def test_bad_post(client):
-    request = client.post("/", json={
+    request = client.post("/predictions", json={
         "age": 100,
         "workclass": "something",
         "education": "college",
@@ -29,11 +29,11 @@ def test_bad_post(client):
         "hoursPerWeek": 60,
         "nativeCountry": "United-States"
     })
-    assert request.status_code == 422
+    assert request.status_code == 405
     
     
 def test_ok_post(client):
-    request = client.post("/", json={
+    request = client.post("/predictions", json={
         "age": 28,
         "workclass": "Private",
         "education": "Bachelors",
