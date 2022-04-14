@@ -1,23 +1,48 @@
 import pytest
 
 from fastapi.testclient import TestClient
-
-# Import our app from main.py.
 from app import app
 
 
-# Instantiate the testing client with our app.
 @pytest.fixture
 def client():
-    """
-    Get dataset
-    """
     api_client = TestClient(app)
     return api_client
 
 
-# Write tests using the same syntax as with the requests' module.
 def test_get(client):
-    r = client.get("/")
-    assert r.status_code == 200
-    assert r.json() == {'message': 'Welcome to the salary predictor API'}
+    request = client.get("/")
+    assert request.status_code == 200
+    assert rrquest.json() == {'message': 'Welcome to the salary predictor API'}
+
+
+def test_bad_post(client):
+    request = client.post("/", json={
+        "age": 100,
+        "workclass": "something",
+        "education": "college",
+        "maritalStatus": "Erro123",
+        "occupation": "WRONG",
+        "relationship": "Husband",
+        "race": "Black",
+        "sex": "Female",
+        "hoursPerWeek": 60,
+        "nativeCountry": "United-States"
+    })
+    assert request.status_code == 422
+    
+    
+ def test_ok_post(client):
+    request = client.post("/", json={
+        "age": 28,
+        "workclass": "Private",
+        "education": "Bachelors",
+        "maritalStatus": "Divorced",
+        "occupation": "Prof-specialty",
+        "relationship": "Husband",
+        "race": "White",
+        "sex": "Male",
+        "hoursPerWeek": 60,
+        "nativeCountry": "United-States"
+    })
+    assert request.status_code == 200
