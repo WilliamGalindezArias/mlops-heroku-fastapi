@@ -4,3 +4,5 @@ flake8
 requests
 scikit-learn
 pytest
+fastapi
+uvicorn[standard]
