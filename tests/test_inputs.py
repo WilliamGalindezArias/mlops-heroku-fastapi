@@ -13,7 +13,7 @@ def client():
 def test_get(client):
     request = client.get("/")
     assert request.status_code == 200
-    assert rrquest.json() == {'message': 'Welcome to the salary predictor API'}
+    assert request.json() == {'message': 'Welcome to the salary predictor API'}
 
 
 def test_bad_post(client):
