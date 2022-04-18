@@ -9,19 +9,19 @@ import requests
 
 URL = "https://devops-ml.herokuapp.com/predictions"
 data = {
-        "age": 39,
+        "age": 32,
         "fnlgt": 77516,
-        "workclass": "State-gov",
+        "workclass": "Private",
         "education": "Bachelors",
-        "education_num": 13,
+        "education_num": 20,
         "marital_status": "Never-married",
-        "occupation": "Adm-clerical",
+        "occupation": "Exec-managerial",
         "relationship": "Not-in-family",
         "race": "White",
         "sex": "Male",
         "capital_gain": 2174,
         "capital_loss": 0,
-        "hours_per_week": 40,
+        "hours_per_week": 60,
         "native_country": "United-States"}
     
 
